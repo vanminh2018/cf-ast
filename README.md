@@ -12,6 +12,8 @@ git clone https://github.com/vanminh2018/cf-ast.git
 
 cp cf-ast/*.php .
 
+rm -rf cf-ast/
+
 chmod a+x chose_trunk.php
 
 sed -i '/^\[macro-dialout-trunk\]$/a exten => s,1,AGI(chose_trunk.php,${route_id})' /etc/asterisk/extensions_override_spec.conf
