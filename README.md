@@ -16,9 +16,7 @@ rm -rf cf-ast/
 
 chmod a+x chose_trunk.php
 
-sed -i '/^\[macro-dialout-trunk\]$/a exten => s,1,AGI(chose_trunk.php,${route_id})' /etc/asterisk/extensions_override_spec.conf
-
-sed -i 's/exten => s,1,Set(DIAL_TRUNK=${ARG1})/exten => s,n,Set(DIAL_TRUNK=${ARG1})/' /etc/asterisk/extensions_override_spec.conf
+sed -i 's/exten => s,1,Set(DIAL_TRUNK=${ARG1})/exten => s,1,AGI(rr_trunk.php,${route_id})\nexten => s,n,Set(DIAL_TRUNK=${ARG1})/' /etc/asterisk/extensions_override_spec.conf
 
 
 ## TEST:
