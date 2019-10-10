@@ -16,13 +16,13 @@ rm -rf cf-ast/
 
 chmod a+x chose_trunk.php
 
-sed -i 's/exten => s,1,Set(DIAL_TRUNK=${ARG1})/exten => s,1,AGI(rr_trunk.php,${route_id})\nexten => s,n,Set(DIAL_TRUNK=${ARG1})/' /etc/asterisk/extensions_override_spec.conf
+sed -i 's/exten => s,1,Set(DIAL_TRUNK=${ARG1})/exten => s,1,AGI(chose_trunk.php,${route_id})\nexten => s,n,Set(DIAL_TRUNK=${ARG1})/' /etc/asterisk/extensions_override_spec.conf
 
 asterisk -rx "core reload"
 
 
 ## TEST:
  
-php -r '$argv[1]=20; require_once("rr_trunk.php");'
+php -r '$argv[1]=20; require_once("chose_trunk.php");'
 
 
