@@ -8,7 +8,7 @@ sed -i '/, new ext_set("_NODEST",""));/a $ext->add($context, $exten, "", new ext
 
 cd /var/lib/asterisk/agi-bin
 
-git clone https://github.com/vanminh2018/cf-ast.git
+git clone https://github.com/vanminh2018/cf-ast-rr-route.git
 
 cp cf-ast/*.php .
 
